@@ -1,0 +1,191 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-26 00:19:46.571366",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "bill_of_landing",
+  "pick_list",
+  "received_qty_withrim",
+  "received_qty_withoutrim",
+  "sold_qty_withrim",
+  "sold_qty_withoutrim",
+  "final_qty_withrim",
+  "final_qty_withoutrim",
+  "column_break_qtom",
+  "daily_rate_withrim",
+  "daily_rate_withoutrim",
+  "daily_sub_total_withrim",
+  "daily_sub_total_withoutrim",
+  "number_of_days",
+  "cost_for_the_days_withrim",
+  "cost_for_the_days_withoutrim",
+  "amount",
+  "track_items_section",
+  "received_items",
+  "column_break_lqmr",
+  "out_items",
+  "section_break_licu",
+  "final_stored_items"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "bill_of_landing",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Bill of Landing",
+   "options": "Bill Of Landing"
+  },
+  {
+   "fieldname": "pick_list",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Pick List",
+   "options": "Pick List"
+  },
+  {
+   "fieldname": "number_of_days",
+   "fieldtype": "Int",
+   "label": "Number of days"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Amount",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "final_qty_withrim",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Final Qty(With Rim)"
+  },
+  {
+   "fieldname": "final_qty_withoutrim",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Final Qty(Without Rim)"
+  },
+  {
+   "fieldname": "daily_rate_withrim",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Daily Rate(With Rim)",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "daily_rate_withoutrim",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Daily Rate(Without Rim)",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "daily_sub_total_withrim",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Daily Sub Total(With Rim)",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "daily_sub_total_withoutrim",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Daily Sub Total(Without Rim)",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "cost_for_the_days_withrim",
+   "fieldtype": "Currency",
+   "label": "Cost For the days(With Rim)"
+  },
+  {
+   "fieldname": "cost_for_the_days_withoutrim",
+   "fieldtype": "Currency",
+   "label": "Cost For the days(Without Rim)"
+  },
+  {
+   "fieldname": "sold_qty_withrim",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Sold Qty(With Rim)"
+  },
+  {
+   "fieldname": "sold_qty_withoutrim",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Sold Qty(Without Rim)"
+  },
+  {
+   "fieldname": "received_qty_withrim",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Received Qty(With Rim)"
+  },
+  {
+   "fieldname": "received_qty_withoutrim",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Received Qty(Without Rim)"
+  },
+  {
+   "fieldname": "column_break_qtom",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "track_items_section",
+   "fieldtype": "Section Break",
+   "label": "Track Items"
+  },
+  {
+   "fieldname": "received_items",
+   "fieldtype": "Long Text",
+   "label": "Received Items"
+  },
+  {
+   "fieldname": "column_break_lqmr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "out_items",
+   "fieldtype": "Long Text",
+   "label": "Out Items"
+  },
+  {
+   "fieldname": "section_break_licu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "final_stored_items",
+   "fieldtype": "Long Text",
+   "label": "Final stored Items"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-08 02:47:20.608993",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Invoice Rate LBF TH",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

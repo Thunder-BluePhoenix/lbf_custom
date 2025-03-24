@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-11 13:27:46.289261",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "delivery_trip_id",
+  "driver",
+  "driver_name",
+  "vehicle_number_plate",
+  "status",
+  "departed_time",
+  "est_arrival",
+  "delivery_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "delivery_trip_id",
+   "fieldtype": "Data",
+   "label": "Delivery Trip ID"
+  },
+  {
+   "fetch_from": "driver.full_name",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Driver Name",
+   "options": "Driver",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_number_plate",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vehicle Number Plate"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nOpen\nIn Progress\nCompleted\nScheduled\nIn Transit\nDelivered"
+  },
+  {
+   "fieldname": "departed_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Departed time"
+  },
+  {
+   "fieldname": "est_arrival",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Est. Arrival"
+  },
+  {
+   "fieldname": "delivery_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Delivery Time"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Driver",
+   "options": "Driver"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-18 16:42:26.312263",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Delivery Trip TH",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-03-10 22:47:02.590227",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ouz9",
+  "naming_series",
+  "service",
+  "column_break_ntro",
+  "amended_from",
+  "posting_datetime",
+  "submit_invoices",
+  "payment_due_date",
+  "section_break_htep",
+  "start_date_for_storage_cost",
+  "column_break_nelo",
+  "end_date_for_storage_cost",
+  "section_break_psyu",
+  "get_customers",
+  "customer_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ouz9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Bulk Invoice Log",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "\nPH-BL-.YYYY.-.MM.-\nTH-BL-.YYYY.-.MM.-",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Service",
+   "options": "\nPeneus Hub\nTyre Hotel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ntro",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_datetime",
+   "fieldtype": "Datetime",
+   "label": "Posting DateTime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "start_date_for_storage_cost",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date for Storage Cost",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date_for_storage_cost",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date for Storage Cost",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_htep",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nelo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_psyu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customer_details",
+   "fieldtype": "Table",
+   "label": "Customer Details",
+   "options": "Bulk Invoice Customer"
+  },
+  {
+   "fieldname": "get_customers",
+   "fieldtype": "Button",
+   "label": "Get Customers"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval: doc.docstatus == 1",
+   "fieldname": "submit_invoices",
+   "fieldtype": "Button",
+   "label": "Submit Invoices"
+  },
+  {
+   "fieldname": "payment_due_date",
+   "fieldtype": "Date",
+   "label": "Payment Due Date",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-03-11 02:48:58.193740",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Bulk Invoice Log",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

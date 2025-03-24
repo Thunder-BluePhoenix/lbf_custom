@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-06 14:21:41.656383",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "supplier",
+  "is_default",
+  "is_transporter",
+  "column_break_jwvr",
+  "cutoff_start_time",
+  "cutoff_end_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transporter Name",
+   "link_filters": "[[\"Supplier\",\"is_transporter\",\"=\",1]]",
+   "options": "Supplier"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Default"
+  },
+  {
+   "fieldname": "column_break_jwvr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier.custom_cutoff_start_time",
+   "fieldname": "cutoff_start_time",
+   "fieldtype": "Time",
+   "label": "Cutoff Start Time"
+  },
+  {
+   "fetch_from": "supplier.custom_cutoff_end_time",
+   "fieldname": "cutoff_end_time",
+   "fieldtype": "Time",
+   "label": "Cutoff End Time"
+  },
+  {
+   "default": "0",
+   "fetch_from": "supplier.is_transporter",
+   "fieldname": "is_transporter",
+   "fieldtype": "Check",
+   "label": "Is Transporter",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-13 17:21:26.127907",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Supplier for Customer",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

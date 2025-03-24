@@ -1,0 +1,21 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Total Qty For Each Customers",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-12-25 01:22:03.909055",
+ "dashboard_name": "Total Item Balance For Each Customers",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-12-25 01:23:20.706720",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Total Item Balance For Each Customers",
+ "owner": "Administrator"
+}

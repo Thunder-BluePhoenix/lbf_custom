@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-07 16:04:16.947797",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_serial_no",
+  "tyre_type",
+  "pick_list",
+  "bill_of_landing",
+  "date_received",
+  "date_out",
+  "column_break_bdat",
+  "total_number_of_days_stored",
+  "minimum_threshold_days",
+  "charges_for_with_rim",
+  "charges_for_without_rim",
+  "must_be_paid_for_the_days",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_serial_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Serial No",
+   "options": "Serial No"
+  },
+  {
+   "fieldname": "tyre_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tyre Type",
+   "options": "\nWith Rim\nWithout Rim"
+  },
+  {
+   "fieldname": "pick_list",
+   "fieldtype": "Link",
+   "label": "Pick List",
+   "options": "Pick List"
+  },
+  {
+   "fetch_from": "item_serial_no.custom_creation_document_name",
+   "fieldname": "bill_of_landing",
+   "fieldtype": "Link",
+   "label": "Bill of Landing",
+   "options": "Bill Of Landing"
+  },
+  {
+   "fieldname": "date_received",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Received"
+  },
+  {
+   "fieldname": "date_out",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Out"
+  },
+  {
+   "fieldname": "column_break_bdat",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_number_of_days_stored",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Number Of days Stored"
+  },
+  {
+   "fieldname": "minimum_threshold_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Minimum Threshold Days"
+  },
+  {
+   "fieldname": "charges_for_with_rim",
+   "fieldtype": "Float",
+   "label": "Charges For with Rim"
+  },
+  {
+   "fieldname": "charges_for_without_rim",
+   "fieldtype": "Float",
+   "label": "Charges For without Rim"
+  },
+  {
+   "fieldname": "must_be_paid_for_the_days",
+   "fieldtype": "Int",
+   "label": "Must Be paid for the days"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-08 01:37:41.214247",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Threshold Rate LBF TH",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

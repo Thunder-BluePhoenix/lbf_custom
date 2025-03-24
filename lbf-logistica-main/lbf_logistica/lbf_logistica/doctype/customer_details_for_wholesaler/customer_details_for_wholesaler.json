@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-04 17:52:41.196333",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "parent_customer",
+  "child_customer_name",
+  "column_break_tgbn",
+  "child_customer_address_name",
+  "child_customer_contact_name",
+  "datetime"
+ ],
+ "fields": [
+  {
+   "fieldname": "parent_customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Parent Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "child_customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Child Customer name"
+  },
+  {
+   "fieldname": "column_break_tgbn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "child_customer_address_name",
+   "fieldtype": "Link",
+   "label": "Child Customer Address Name",
+   "options": "Address"
+  },
+  {
+   "fieldname": "child_customer_contact_name",
+   "fieldtype": "Link",
+   "label": "Child Customer Contact Name",
+   "options": "Contact"
+  },
+  {
+   "default": "now",
+   "fieldname": "datetime",
+   "fieldtype": "Datetime",
+   "label": "Date/Time"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-05 22:56:34.653732",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Customer Details For Wholesaler",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

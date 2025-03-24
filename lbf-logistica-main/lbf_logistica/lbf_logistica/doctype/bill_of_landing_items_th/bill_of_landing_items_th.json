@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-04 19:30:55.317968",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "qty",
+  "tyre_type",
+  "column_break_gvol",
+  "accepted_qty",
+  "rejected_qty",
+  "serial_and_batch_bundle_accepted",
+  "serial_and_batch_bundle_rejected",
+  "quality_inspection",
+  "customer_batch_bundle",
+  "done_quality_inspection",
+  "section_break_mnpu",
+  "serial_no"
+ ],
+ "fields": [
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name"
+  },
+  {
+   "fetch_from": "item_name.item_code",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Qty"
+  },
+  {
+   "fieldname": "tyre_type",
+   "fieldtype": "Select",
+   "label": "Tyre Type",
+   "options": "\nWith Rim\nWithout Rim"
+  },
+  {
+   "fieldname": "accepted_qty",
+   "fieldtype": "Data",
+   "label": "Accepted Qty"
+  },
+  {
+   "fieldname": "rejected_qty",
+   "fieldtype": "Data",
+   "label": "Rejected Qty"
+  },
+  {
+   "fieldname": "serial_and_batch_bundle_accepted",
+   "fieldtype": "Link",
+   "label": "Serial and Batch Bundle Accepted",
+   "options": "Serial and Batch Bundle"
+  },
+  {
+   "fieldname": "serial_and_batch_bundle_rejected",
+   "fieldtype": "Link",
+   "label": "Serial and Batch Bundle Rejected",
+   "options": "Serial and Batch Bundle"
+  },
+  {
+   "fieldname": "quality_inspection",
+   "fieldtype": "Link",
+   "label": "Quality Inspection",
+   "options": "Quality Inspection"
+  },
+  {
+   "fieldname": "column_break_gvol",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mnpu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Text",
+   "label": "Serial No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_batch_bundle",
+   "fieldtype": "Link",
+   "label": "Customer Batch Bundle",
+   "options": "Serial and Batch Bundle",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "done_quality_inspection",
+   "fieldtype": "Check",
+   "label": "Quality Inspection Done",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-07 04:43:09.741327",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Bill of Landing Items TH",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

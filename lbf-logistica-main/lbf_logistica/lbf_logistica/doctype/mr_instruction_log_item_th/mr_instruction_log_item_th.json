@@ -1,0 +1,733 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2024-12-16 12:21:07.893267",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "other_item_code",
+  "other_item_name",
+  "col_break1",
+  "schedule_date",
+  "type",
+  "create_item",
+  "id",
+  "section_break_4",
+  "description",
+  "model",
+  "model_others",
+  "image",
+  "column_break_12",
+  "diameterinch",
+  "diameterinch_others",
+  "tire_widthmm",
+  "tire_widthmm_others",
+  "weight",
+  "weight_others",
+  "item_group",
+  "aspect_ratio",
+  "aspect_ratio_others",
+  "column_break_wksc",
+  "load_index",
+  "load_index_others",
+  "carcass",
+  "carcass_others",
+  "speed_rating",
+  "speed_rating_others",
+  "marks",
+  "marks_others",
+  "brand",
+  "brandothers",
+  "section_break_ztpi",
+  "serial_and_batch_bundle",
+  "serial_nos",
+  "quantity_and_warehouse",
+  "qty",
+  "stock_uom",
+  "from_warehouse",
+  "warehouse",
+  "col_break2",
+  "uom",
+  "conversion_factor",
+  "stock_qty",
+  "max_order_qty",
+  "qty_info_sec_break",
+  "min_order_qty",
+  "projected_qty",
+  "qty_info_col_break",
+  "actual_qty",
+  "ordered_qty",
+  "received_qty",
+  "rate_and_amount_section_break",
+  "rate",
+  "price_list_rate",
+  "col_break3",
+  "amount",
+  "accounting_details_section",
+  "expense_account",
+  "column_break_glru",
+  "wip_composite_asset",
+  "manufacture_details",
+  "manufacturer",
+  "manufacturer_part_no",
+  "col_break_mfg",
+  "bom_no",
+  "accounting_dimensions_section",
+  "project",
+  "dimension_col_break",
+  "cost_center",
+  "more_info",
+  "lead_time_date",
+  "sales_order",
+  "sales_order_item",
+  "col_break4",
+  "production_plan",
+  "material_request_plan_item",
+  "job_card_item",
+  "section_break_46",
+  "page_break"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "columns": 3,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Item Code",
+   "oldfieldname": "item_code",
+   "oldfieldtype": "Link",
+   "options": "Item",
+   "print_width": "100px",
+   "reqd": 1,
+   "search_index": 1,
+   "width": "100px"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Item Name",
+   "oldfieldname": "item_name",
+   "oldfieldtype": "Data",
+   "print_hide": 1,
+   "print_width": "100px",
+   "search_index": 1,
+   "width": "100px"
+  },
+  {
+   "fieldname": "col_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "bold": 1,
+   "columns": 2,
+   "fieldname": "schedule_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Required By",
+   "oldfieldname": "schedule_date",
+   "oldfieldtype": "Date",
+   "print_width": "100px",
+   "reqd": 1,
+   "width": "100px"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description",
+   "oldfieldname": "description",
+   "oldfieldtype": "Text",
+   "print_width": "250px",
+   "width": "250px"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "Item Group",
+   "oldfieldname": "item_group",
+   "oldfieldtype": "Link",
+   "options": "Item Group",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.brand",
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "Brand",
+   "options": "Brand"
+  },
+  {
+   "fetch_from": "item_code.image",
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "quantity_and_warehouse",
+   "fieldtype": "Section Break",
+   "label": "Quantity and Warehouse"
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "oldfieldname": "qty",
+   "oldfieldtype": "Currency",
+   "print_width": "80px",
+   "reqd": 1,
+   "width": "80px"
+  },
+  {
+   "default": "Nos",
+   "fieldname": "stock_uom",
+   "fieldtype": "Link",
+   "label": "Stock UOM",
+   "options": "UOM",
+   "print_hide": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:parent.material_request_type == \"Material Transfer\"",
+   "fieldname": "from_warehouse",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "ignore_user_permissions": 1,
+   "label": "Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "columns": 3,
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Target Warehouse",
+   "oldfieldname": "warehouse",
+   "oldfieldtype": "Link",
+   "options": "Warehouse",
+   "print_width": "100px",
+   "width": "100px"
+  },
+  {
+   "fieldname": "col_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "default": "Nos",
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM",
+   "oldfieldname": "uom",
+   "oldfieldtype": "Link",
+   "options": "UOM",
+   "print_width": "70px",
+   "reqd": 1,
+   "width": "70px"
+  },
+  {
+   "default": "1",
+   "fieldname": "conversion_factor",
+   "fieldtype": "Float",
+   "label": "UOM Conversion Factor",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "stock_qty",
+   "fieldtype": "Float",
+   "label": "Stock Qty",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty_info_sec_break",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "min_order_qty",
+   "fieldtype": "Float",
+   "label": "Min Order Qty",
+   "no_copy": 1,
+   "oldfieldname": "min_order_qty",
+   "oldfieldtype": "Currency",
+   "print_hide": 1,
+   "print_width": "70px",
+   "read_only": 1,
+   "width": "70px"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "projected_qty",
+   "fieldtype": "Float",
+   "label": "Projected Qty",
+   "no_copy": 1,
+   "oldfieldname": "projected_qty",
+   "oldfieldtype": "Currency",
+   "print_hide": 1,
+   "print_width": "70px",
+   "read_only": 1,
+   "width": "70px"
+  },
+  {
+   "fieldname": "qty_info_col_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "actual_qty",
+   "fieldtype": "Float",
+   "label": "Actual Qty",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "report_hide": 1
+  },
+  {
+   "depends_on": "eval:doc.docstatus==1",
+   "fieldname": "ordered_qty",
+   "fieldtype": "Float",
+   "label": "Completed Qty",
+   "no_copy": 1,
+   "oldfieldname": "ordered_qty",
+   "oldfieldtype": "Currency",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.docstatus==1",
+   "fieldname": "received_qty",
+   "fieldtype": "Float",
+   "label": "Received Qty",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate_and_amount_section_break",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "options": "Company:company:default_currency",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "price_list_rate",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Price List Rate",
+   "options": "currency",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "Company:company:default_currency",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "accounting_details_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Details"
+  },
+  {
+   "fieldname": "expense_account",
+   "fieldtype": "Link",
+   "label": "Expense Account",
+   "options": "Account",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "column_break_glru",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "wip_composite_asset",
+   "fieldtype": "Link",
+   "label": "WIP Composite Asset",
+   "options": "Asset"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:in_list([\"Manufacture\", \"Purchase\"], parent.material_request_type)",
+   "fieldname": "manufacture_details",
+   "fieldtype": "Section Break",
+   "label": "Manufacture"
+  },
+  {
+   "fieldname": "manufacturer",
+   "fieldtype": "Link",
+   "label": "Manufacturer",
+   "options": "Manufacturer"
+  },
+  {
+   "fieldname": "manufacturer_part_no",
+   "fieldtype": "Data",
+   "label": "Manufacturer Part Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_mfg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "bom_no",
+   "fieldtype": "Link",
+   "label": "BOM No",
+   "no_copy": 1,
+   "options": "BOM",
+   "print_hide": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "accounting_dimensions_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Dimensions"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "dimension_col_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center",
+   "print_hide": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_info",
+   "fieldtype": "Section Break",
+   "label": "More Information"
+  },
+  {
+   "fieldname": "lead_time_date",
+   "fieldtype": "Date",
+   "label": "Lead Time Date",
+   "no_copy": 1,
+   "oldfieldname": "lead_time_date",
+   "oldfieldtype": "Date",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_order_item",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Sales Order Item",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "col_break4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "production_plan",
+   "fieldtype": "Link",
+   "label": "Production Plan",
+   "no_copy": 1,
+   "options": "Production Plan",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "material_request_plan_item",
+   "fieldtype": "Data",
+   "label": "Material Request Plan Item",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_card_item",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Job Card Item",
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "section_break_46",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "page_break",
+   "fieldtype": "Check",
+   "label": "Page Break",
+   "no_copy": 1,
+   "oldfieldname": "page_break",
+   "oldfieldtype": "Check",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "\nWith Rim\nWithout Rim",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.custom_aspect_ratio",
+   "fieldname": "aspect_ratio",
+   "fieldtype": "Data",
+   "label": "Aspect ratio"
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.custom_load_index",
+   "fieldname": "load_index",
+   "fieldtype": "Data",
+   "label": "Load Index"
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.custom_carcass",
+   "fieldname": "carcass",
+   "fieldtype": "Data",
+   "label": "Carcass"
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.custom_tire_widthmm",
+   "fieldname": "tire_widthmm",
+   "fieldtype": "Data",
+   "label": "Tire Width(mm)"
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.custom_diameterinch",
+   "fieldname": "diameterinch",
+   "fieldtype": "Data",
+   "label": "Diameter(inch)"
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.custom_weight",
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.custom_model",
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.custom_speed_rating",
+   "fieldname": "speed_rating",
+   "fieldtype": "Data",
+   "label": "Speed Rating"
+  },
+  {
+   "depends_on": "eval:!/other/i.test(doc.item_code)\r\n",
+   "fetch_from": "item_code.custom_marks",
+   "fieldname": "marks",
+   "fieldtype": "Data",
+   "label": "Marks"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "other_item_code",
+   "fieldtype": "Data",
+   "label": "Other Item Code",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "other_item_name",
+   "fieldtype": "Data",
+   "label": "Other Item Name",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "create_item",
+   "fieldtype": "Button",
+   "label": "Create Item"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "tire_widthmm_others",
+   "fieldtype": "Data",
+   "label": "Tire Width(mm) (others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "diameterinch_others",
+   "fieldtype": "Data",
+   "label": "Diameter(inch) (others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "weight_others",
+   "fieldtype": "Data",
+   "label": "Weight (others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "aspect_ratio_others",
+   "fieldtype": "Data",
+   "label": "Aspect ratio (others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "load_index_others",
+   "fieldtype": "Data",
+   "label": "Load Index (others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "model_others",
+   "fieldtype": "Data",
+   "label": "Model (others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "carcass_others",
+   "fieldtype": "Data",
+   "label": "Carcass (others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "speed_rating_others",
+   "fieldtype": "Data",
+   "label": "Speed Rating (others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "marks_others",
+   "fieldtype": "Data",
+   "label": "Marks (others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n"
+  },
+  {
+   "depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "fieldname": "brandothers",
+   "fieldtype": "Data",
+   "label": "Brand(others)",
+   "mandatory_depends_on": "eval: /other/i.test(doc.item_code)\n",
+   "options": "Brand"
+  },
+  {
+   "fieldname": "max_order_qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Max Order Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wksc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ztpi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "serial_and_batch_bundle",
+   "fieldtype": "Link",
+   "label": "Serial And Batch Bundle",
+   "options": "Serial and Batch Bundle",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "serial_nos",
+   "fieldtype": "Long Text",
+   "label": "Serial Nos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "Id",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-06 19:09:56.723942",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "MR Instruction Log Item TH",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

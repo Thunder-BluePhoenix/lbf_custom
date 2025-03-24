@@ -1,0 +1,25 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Pick List Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Daily Picklist Count",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-12-09 17:51:40.481708",
+ "dashboard_name": "Pick List",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2024-12-10 13:00:20.575210",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Pick List",
+ "owner": "Administrator"
+}

@@ -1,0 +1,695 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-12-04 18:34:15.092253",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_dbmk",
+  "amended_from",
+  "service",
+  "party_type",
+  "customer",
+  "reference_shipment_id",
+  "column_break_yqpk",
+  "naming_series",
+  "supplier_delivery_note",
+  "party_name",
+  "legal_doc_for_redelivery",
+  "stock_entry_created",
+  "column_break_crqc",
+  "posting_date",
+  "posting_time",
+  "reference_material_request",
+  "status",
+  "shipment_details_section",
+  "targa",
+  "reason",
+  "column_break_tham",
+  "mezzo",
+  "column_break_ddcu",
+  "season",
+  "condition",
+  "section_break_copr",
+  "accepted_warehouse",
+  "column_break_amow",
+  "rejected_warehouse",
+  "section_break_puld",
+  "item_details_ph",
+  "item_details_th",
+  "section_break_buxb",
+  "total_qty",
+  "total_qty_th",
+  "column_break_ccub",
+  "total_qty_accepted",
+  "total_tyres_with_rim",
+  "column_break_slou",
+  "total_qty_rejected",
+  "total_tyres_without_rim",
+  "handling_charges_section",
+  "handling_in_charges",
+  "handling_out_charges",
+  "th_charges_section",
+  "th_charges",
+  "section_break_rudo",
+  "all_item_serial_no",
+  "address_and_contact_tab",
+  "customer_address_section",
+  "new_address",
+  "new_address_btn",
+  "customer_address",
+  "customer_name",
+  "address",
+  "coordinates",
+  "column_break_ukez",
+  "new_contact",
+  "new_contact_btn",
+  "customer_contact",
+  "contact_person",
+  "contact",
+  "customer_shipping_address_section",
+  "shipping_to",
+  "customer_shipping_address",
+  "shipping_address",
+  "column_break_axkh",
+  "shipping_contact_person",
+  "shiping_contact",
+  "shipping_coordinates",
+  "more_info_tab",
+  "transporter_details_section",
+  "transporter_name",
+  "new_supplier_address",
+  "new_supplier_address_btn",
+  "transporter_address_name",
+  "transporter_address",
+  "column_break_vxxe",
+  "new_supplier_contact",
+  "new_supplier_contact_btn",
+  "transporter_contact",
+  "transporter_contact_person",
+  "transport_contact",
+  "section_break_syml",
+  "vehicle_number",
+  "column_break_vfqf",
+  "vehicle_date",
+  "additional_info_section",
+  "instructions",
+  "column_break_twmj",
+  "remarks",
+  "section_break_kqwc",
+  "submission_datetime",
+  "submission_date",
+  "tab_4_tab",
+  "qa_insp_html",
+  "column_break_aqxq",
+  "stock_entries"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_dbmk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Bill Of Landing",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Select",
+   "label": "Service",
+   "options": "\nPeneus Hub\nTyre Hotel"
+  },
+  {
+   "fieldname": "column_break_yqpk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.service!=\"Tyre Hotel\";\n",
+   "fieldname": "supplier_delivery_note",
+   "fieldtype": "Link",
+   "label": "Supplier Delivery Note",
+   "options": "Delivery Note"
+  },
+  {
+   "fieldname": "column_break_crqc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "section_break_copr",
+   "fieldtype": "Section Break",
+   "label": "Warehouse"
+  },
+  {
+   "fieldname": "accepted_warehouse",
+   "fieldtype": "Link",
+   "label": "Accepted Warehouse",
+   "mandatory_depends_on": "eval: doc.legal_doc_for_redelivery === 0",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_amow",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.service!=\"Tyre Hotel\";\n",
+   "fieldname": "rejected_warehouse",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Rejected Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "section_break_puld",
+   "fieldtype": "Section Break",
+   "label": "Items Details"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Peneus Hub\"\n",
+   "fieldname": "total_qty",
+   "fieldtype": "Data",
+   "label": "Total Qty",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.service==\"Peneus Hub\"\n",
+   "fieldname": "total_qty_accepted",
+   "fieldtype": "Data",
+   "label": "Total Qty (Accepted)",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.service==\"Peneus Hub\"\n",
+   "fieldname": "total_qty_rejected",
+   "fieldtype": "Data",
+   "label": "Total Qty (Rejected)",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.service==\"Peneus Hub\";\n",
+   "fieldname": "item_details_ph",
+   "fieldtype": "Table",
+   "label": "Item Details PH",
+   "options": "Bill Of Landing Item"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "item_details_th",
+   "fieldtype": "Table",
+   "label": "Item Details TH",
+   "options": "Bill of Landing Items TH"
+  },
+  {
+   "fieldname": "section_break_buxb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ccub",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_slou",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_and_contact_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address and Contact"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ukez",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person",
+   "options": "Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "more_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "More Info"
+  },
+  {
+   "fieldname": "transporter_address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transport_contact",
+   "fieldtype": "Data",
+   "label": "Contact ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transporter_details_section",
+   "fieldtype": "Section Break",
+   "label": "Transporter Details"
+  },
+  {
+   "fieldname": "column_break_vxxe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_syml",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number"
+  },
+  {
+   "fieldname": "column_break_vfqf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_date",
+   "fieldtype": "Date",
+   "label": "Vehicle Date"
+  },
+  {
+   "fieldname": "additional_info_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Info"
+  },
+  {
+   "fieldname": "instructions",
+   "fieldtype": "Small Text",
+   "label": "Instructions"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "reference_shipment_id",
+   "fieldtype": "Link",
+   "label": "Reference Shipment Id",
+   "options": "Shipment"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "party_name",
+   "fieldtype": "Data",
+   "label": "Party Name"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "reference_material_request",
+   "fieldtype": "Link",
+   "label": "Reference Material Request",
+   "options": "Material Request"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "shipment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Shipment Details"
+  },
+  {
+   "fieldname": "targa",
+   "fieldtype": "Data",
+   "label": "Targa"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Link",
+   "label": "Reason",
+   "options": "Reason"
+  },
+  {
+   "fieldname": "column_break_tham",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mezzo",
+   "fieldtype": "Data",
+   "label": "Mezzo"
+  },
+  {
+   "fieldname": "column_break_ddcu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "season",
+   "fieldtype": "Link",
+   "label": "Season",
+   "options": "Season"
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Link",
+   "label": "Condition",
+   "options": "Condition"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "coordinates",
+   "fieldtype": "Data",
+   "label": "Coordinates"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "\nMAT-PRE-PH-.YYYY.-.MM.-\nMAT-PRE-TH-.YYYY.-.MM.-",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_axkh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "shipping_contact_person",
+   "fieldtype": "Link",
+   "label": "Shipping Contact Person ",
+   "options": "Contact"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "shipping_coordinates",
+   "fieldtype": "Data",
+   "label": "Shipping Coordinates"
+  },
+  {
+   "fieldname": "new_address",
+   "fieldtype": "HTML",
+   "label": "New Address"
+  },
+  {
+   "fieldname": "new_contact",
+   "fieldtype": "HTML",
+   "label": "New Contact"
+  },
+  {
+   "fieldname": "new_address_btn",
+   "fieldtype": "Button",
+   "label": "New Address"
+  },
+  {
+   "fieldname": "new_contact_btn",
+   "fieldtype": "Button",
+   "label": "New Contact"
+  },
+  {
+   "fieldname": "column_break_twmj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Peneus Hub\"\n",
+   "fieldname": "handling_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Handling Charges"
+  },
+  {
+   "fieldname": "handling_in_charges",
+   "fieldtype": "Table",
+   "label": "Handling In Charges",
+   "options": "Handling In Charges",
+   "read_only": 1
+  },
+  {
+   "fieldname": "handling_out_charges",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Handling Out Charges",
+   "options": "Handling Out Charges"
+  },
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Link",
+   "label": "Party Type",
+   "options": "Customer Group",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.party_type",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "mandatory_depends_on": "eval:doc.party_type",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "customer_shipping_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "new_supplier_address",
+   "fieldtype": "HTML",
+   "label": "New Supplier Address "
+  },
+  {
+   "fieldname": "new_supplier_contact",
+   "fieldtype": "HTML",
+   "label": "New Supplier Contact"
+  },
+  {
+   "fieldname": "new_supplier_address_btn",
+   "fieldtype": "Button",
+   "label": "New Address "
+  },
+  {
+   "fieldname": "new_supplier_contact_btn",
+   "fieldtype": "Button",
+   "label": "New Contact"
+  },
+  {
+   "fieldname": "transporter_address_name",
+   "fieldtype": "Link",
+   "label": "Transporter Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "transporter_contact",
+   "fieldtype": "Link",
+   "label": "Transporter Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "transporter_contact_person",
+   "fieldtype": "Data",
+   "label": "Transporter Contact Person",
+   "options": "Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "options": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_contact",
+   "fieldtype": "Link",
+   "label": "Customer Contact",
+   "options": "Contact"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "shiping_contact",
+   "fieldtype": "Data",
+   "label": "Shipping Contact ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_address_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Address"
+  },
+  {
+   "fieldname": "customer_shipping_address_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Shipping Address"
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\";\n",
+   "fieldname": "th_charges_section",
+   "fieldtype": "Section Break",
+   "label": "TH Charges"
+  },
+  {
+   "fieldname": "th_charges",
+   "fieldtype": "Table",
+   "options": "TH Charges"
+  },
+  {
+   "fieldname": "submission_datetime",
+   "fieldtype": "Datetime",
+   "label": "Submission DateTime"
+  },
+  {
+   "fieldname": "section_break_kqwc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "submission_date",
+   "fieldtype": "Date",
+   "label": "Submission Date"
+  },
+  {
+   "fieldname": "total_tyres_with_rim",
+   "fieldtype": "Data",
+   "label": "Total Tyres (With Rim)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_tyres_without_rim",
+   "fieldtype": "Data",
+   "label": "Total Tyres (Without Rim)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "legal_doc_for_redelivery",
+   "fieldtype": "Check",
+   "label": "Legal Doc For Redelivery",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.service==\"Tyre Hotel\"\n",
+   "fieldname": "total_qty_th",
+   "fieldtype": "Data",
+   "label": "Total Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transporter_name",
+   "fieldtype": "Link",
+   "label": "Transporter Name",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "shipping_to",
+   "fieldtype": "Link",
+   "label": "Shipping To ",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_break_rudo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "all_item_serial_no",
+   "fieldtype": "Long Text",
+   "hidden": 1,
+   "label": "All Item Serial No"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nOpen\nUnder QI\nClosed\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_4_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections"
+  },
+  {
+   "fieldname": "qa_insp_html",
+   "fieldtype": "HTML",
+   "label": "QA Insp Html"
+  },
+  {
+   "fieldname": "column_break_aqxq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "stock_entry_created",
+   "fieldtype": "Check",
+   "label": "Stock Entry Created",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_entries",
+   "fieldtype": "HTML",
+   "label": "Stock entries"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-28 01:29:28.015176",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Bill Of Landing",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

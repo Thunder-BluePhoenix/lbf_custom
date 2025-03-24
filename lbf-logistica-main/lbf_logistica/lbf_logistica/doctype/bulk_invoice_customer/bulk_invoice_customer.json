@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-10 23:01:50.026962",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "invoice_id",
+  "column_break_snwl",
+  "contact",
+  "mail_id",
+  "invoice_submitted"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.custom_contact_no",
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "invoice_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Invoice ID",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_snwl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.custom_mail_id",
+   "fieldname": "mail_id",
+   "fieldtype": "Data",
+   "label": "Mail ID"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "invoice_submitted",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Invoice Submitted",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-11 01:28:59.478609",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Bulk Invoice Customer",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

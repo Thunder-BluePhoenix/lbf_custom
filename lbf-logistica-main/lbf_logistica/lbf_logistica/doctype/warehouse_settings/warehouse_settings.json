@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-14 12:47:32.067162",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "bill_of_landing_default_warehouses_section",
+  "default_source_warehouse",
+  "column_break_owbe",
+  "default_target_warehouse",
+  "default_loading_zone_section",
+  "default_loading_warehouse"
+ ],
+ "fields": [
+  {
+   "fieldname": "bill_of_landing_default_warehouses_section",
+   "fieldtype": "Section Break",
+   "label": "Bill Of Landing Default Warehouses"
+  },
+  {
+   "fieldname": "default_source_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_owbe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_target_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Target Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "default_loading_zone_section",
+   "fieldtype": "Section Break",
+   "label": "Default Loading Zone"
+  },
+  {
+   "fieldname": "default_loading_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Loading Warehouse",
+   "options": "Warehouse"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-12-14 12:51:50.672894",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Warehouse Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

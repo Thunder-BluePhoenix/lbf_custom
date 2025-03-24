@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:customer",
+ "creation": "2025-02-19 02:15:11.501748",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "section_break_kdwb",
+  "valid_from",
+  "minimum_threshold_days",
+  "column_break_llpo",
+  "valid_to",
+  "tire_with_rim_section",
+  "pricing_typewith_rim",
+  "column_break_ruak",
+  "amount_with_rim",
+  "column_break_kjmv",
+  "currencywith_rim",
+  "tire_without_rim_section",
+  "pricing_typewithout_rim",
+  "column_break_nikg",
+  "amount_without_rim",
+  "column_break_jegt",
+  "currencywithout_rim"
+ ],
+ "fields": [
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "label": "Valid From"
+  },
+  {
+   "fieldname": "minimum_threshold_days",
+   "fieldtype": "Int",
+   "label": "Minimum Threshold Days"
+  },
+  {
+   "fieldname": "column_break_llpo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Date",
+   "label": "Valid To"
+  },
+  {
+   "fieldname": "tire_with_rim_section",
+   "fieldtype": "Section Break",
+   "label": "Tire with Rim"
+  },
+  {
+   "fieldname": "pricing_typewith_rim",
+   "fieldtype": "Select",
+   "label": "Pricing Type(With Rim)",
+   "options": "\nAmount\nRate"
+  },
+  {
+   "fieldname": "column_break_ruak",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount_with_rim",
+   "fieldtype": "Currency",
+   "label": "Amount (With Rim)"
+  },
+  {
+   "fieldname": "column_break_kjmv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currencywith_rim",
+   "fieldtype": "Link",
+   "label": "Currency(With Rim)",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "tire_without_rim_section",
+   "fieldtype": "Section Break",
+   "label": "Tire without Rim"
+  },
+  {
+   "fieldname": "pricing_typewithout_rim",
+   "fieldtype": "Select",
+   "label": "Pricing Type(Without Rim)",
+   "options": "\nAmount\nRate"
+  },
+  {
+   "fieldname": "column_break_nikg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount_without_rim",
+   "fieldtype": "Currency",
+   "label": "Amount (Without Rim)"
+  },
+  {
+   "fieldname": "column_break_jegt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currencywithout_rim",
+   "fieldtype": "Link",
+   "label": "Currency(Without Rim)",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_kdwb",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-19 02:30:24.168864",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Tyre Hotel Pricing Rule",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer",
+ "track_changes": 1
+}

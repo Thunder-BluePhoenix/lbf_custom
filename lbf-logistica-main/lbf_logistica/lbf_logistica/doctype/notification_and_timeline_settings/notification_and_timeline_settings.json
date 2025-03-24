@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-06 01:07:34.602043",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "times_in_between_all_material_request_will_be_submitted_section",
+  "start_time",
+  "column_break_twnf",
+  "ending_time",
+  "section_break_hlop",
+  "notification_for_request_select_roles",
+  "notification_for_other_itemsselect_roles"
+ ],
+ "fields": [
+  {
+   "fieldname": "times_in_between_all_material_request_will_be_submitted_section",
+   "fieldtype": "Section Break",
+   "label": "Times in Between All Material Request will be Submitted"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "column_break_twnf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ending_time",
+   "fieldtype": "Time",
+   "label": "Ending Time"
+  },
+  {
+   "fieldname": "section_break_hlop",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notification_for_request_select_roles",
+   "fieldtype": "Table MultiSelect",
+   "label": "Notification for Material Request (Select Roles)",
+   "options": "Roles For Notifications"
+  },
+  {
+   "fieldname": "notification_for_other_itemsselect_roles",
+   "fieldtype": "Table MultiSelect",
+   "label": "Notification for Other Items(Select Roles)",
+   "options": "Roles For Notifications"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-12-10 15:21:33.898428",
+ "modified_by": "Administrator",
+ "module": "LBF Logistica",
+ "name": "Notification and Timeline Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
